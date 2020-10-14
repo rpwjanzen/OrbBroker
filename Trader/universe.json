@@ -1,0 +1,83 @@
+﻿{
+  "systems": {
+    "sol": {
+      "name": "Sol",
+      "planets": {
+        "mars": {
+          "name": "Mars",
+          "market": {
+            "water": {
+              "rate": 20,
+              "amount": 0,
+              "production": 0,
+              "consumption": 10
+            },
+            "food": {
+              "rate": 30,
+              "amount": 0,
+              "production": 0,
+              "consumption": 10
+            },
+            "ore": {
+              "rate": 10,
+              "amount": 10,
+              "production": 10,
+              "consumption": 0
+            },
+            "fuel": {
+              "rate": 10,
+              "amount": 10,
+              "production": 10,
+              "consumption": 0
+            }
+          }
+        },
+        "earth": {
+          "name": "Earth",
+          "market": {
+            "ore": {
+              "rate": 35,
+              "amount": 0,
+              "production": 10,
+              "consumption": 10
+            },
+            "water": {
+              "amount": 10,
+              "rate": 10,
+              "production": 10,
+              "consumption": 0
+            },
+            "food": {
+              "rate": 10,
+              "amount": 10,
+              "production": 10,
+              "consumption": 0
+            },
+            "fuel": {
+              "rate": 10,
+              "amount": 10,
+              "production": 10,
+              "consumption": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "player": {
+    "turn":  0,
+    "shipName": "CS Shooting Star",
+    "fuelCapacity": 10,
+    "fuel":  10,
+    "cash": 50,
+    "location": {
+      "system": "sol",
+      "planet": "earth"
+    },
+    "cargo": {
+      "goods": {
+      },
+      "capacity": 40
+    }
+  }
+}
