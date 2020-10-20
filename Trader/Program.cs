@@ -68,8 +68,9 @@ namespace Trader
                 if (line.StartsWith("q"))
                 {
                     Console.WriteLine($"Your score is {gameState.Player.Cash}");
+                    Console.WriteLine();
+                    Console.WriteLine("High Scores");
                     DisplayHighScores(gameState);
-
                     quit = true;
                     return;
                 }
@@ -82,11 +83,6 @@ namespace Trader
                 }
 
                 var parts = line.Split(" ");
-                if (parts.Length == 1)
-                {
-                    continue;
-                }
-
                 var travel = parts[0].StartsWith("t");
                 if (travel)
                 {
@@ -215,8 +211,13 @@ namespace Trader
 
         static void TravelToPlanet(string[] parts, GameState gameState)
         {
-            var destination = parts[1];
-            if (!gameState.CurrentSystem.Planets.ContainsKey(destination))
+            string destination = "";
+            if (parts.Length == 2)
+            {
+                destination = parts[1];
+            }
+            
+            if (destination == "" || !gameState.CurrentSystem.Planets.ContainsKey(destination))
             {
                 Console.WriteLine("-----");
                 Console.WriteLine("Planets");

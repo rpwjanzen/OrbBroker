@@ -1,67 +1,78 @@
 ﻿{
   "systems": {
     "sol": {
-      "name": "Sol",
-      "planets": {
-        "mars": {
-          "name": "Mars",
-          "market": {
-            "water": {
-              "rate": 20,
-              "amount": 0,
-              "production": 0,
-              "consumption": 10
-            },
-            "food": {
-              "rate": 30,
-              "amount": 0,
-              "production": 0,
-              "consumption": 10
-            },
-            "ore": {
-              "rate": 10,
-              "amount": 10,
-              "production": 10,
-              "consumption": 0
-            },
-            "fuel": {
-              "rate": 10,
-              "amount": 10,
-              "production": 10,
-              "consumption": 0
+      "positions": {
+        "comment":  "on a 1d line",
+        "mercury": 0,
+        "venus": 1,
+        "earth": 2,
+        "mars": 3,
+        "jupiter": 14,
+        "saturn": 27,
+        "uranus": 56,
+        "neptune": 89
+      },
+        "name" : "Sol",
+        "planets" : {
+          "mars": {
+            "name": "Mars",
+            "market": {
+              "water": {
+                "rate": 20,
+                "amount": 0,
+                "production": 0,
+                "consumption": 10
+              },
+              "food": {
+                "rate": 30,
+                "amount": 0,
+                "production": 0,
+                "consumption": 10
+              },
+              "ore": {
+                "rate": 10,
+                "amount": 10,
+                "production": 10,
+                "consumption": 0
+              },
+              "fuel": {
+                "rate": 10,
+                "amount": 10,
+                "production": 10,
+                "consumption": 0
+              }
             }
-          }
-        },
-        "earth": {
-          "name": "Earth",
-          "market": {
-            "ore": {
-              "rate": 35,
-              "amount": 0,
-              "production": 10,
-              "consumption": 10
-            },
-            "water": {
-              "amount": 10,
-              "rate": 10,
-              "production": 10,
-              "consumption": 0
-            },
-            "food": {
-              "rate": 10,
-              "amount": 10,
-              "production": 10,
-              "consumption": 0
-            },
-            "fuel": {
-              "rate": 10,
-              "amount": 10,
-              "production": 10,
-              "consumption": 0
+          },
+          "earth": {
+            "name": "Earth",
+            "market": {
+              "ore": {
+                "rate": 35,
+                "amount": 0,
+                "production": 10,
+                "consumption": 10
+              },
+              "water": {
+                "amount": 10,
+                "rate": 10,
+                "production": 10,
+                "consumption": 0
+              },
+              "food": {
+                "rate": 10,
+                "amount": 10,
+                "production": 10,
+                "consumption": 0
+              },
+              "fuel": {
+                "rate": 10,
+                "amount": 10,
+                "production": 10,
+                "consumption": 0
+              }
             }
           }
         }
-      }
     }
   },
   "player": {

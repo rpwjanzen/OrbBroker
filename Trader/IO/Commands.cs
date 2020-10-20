@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Trader.IO
+﻿namespace Trader.IO
 {
-    static class Types
+    class ValidationError
     {
-        public static Func<UnvalidatedBuyCommand, ValidatedBuyCommand> ValidateBuyCommand;
-    }
-
-    class CommandText
-    {
-        public static void FromText(string text)
+        public string FieldName { get; }
+        public string Description { get; }
+        public ValidationError(string fieldName, string description)
         {
-
+            FieldName = fieldName;
+            Description = description;
         }
     }
+
+    delegate IResult<ValidatedBuyCommand, ValidationError[]> ValidateBuyCommand(UnvalidatedBuyCommand arg);
+    delegate IResult<ValidatedCommandText, ValidationError[]> ValidateCommandText(UnvalidatedCommandText arg);
+    class UnvalidatedCommandText { }
+    class ValidatedCommandText { }
 
     class UnparsedCommand { }
     class UnvalidatedBuyCommand { }

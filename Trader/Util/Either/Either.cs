@@ -1,8 +1,5 @@
 ﻿namespace Trader
 {
-    /// <summary>
-    ///     Static helper class for Either
-    /// </summary>
     public static class Either
     {
         private struct LeftImpl<TLeft, TRight> : IEither<TLeft, TRight>, ILeft<TLeft>
@@ -61,17 +58,11 @@
             }
         }
 
-        /// <summary>
-        ///     Create an Either with Left value
-        /// </summary>
         public static IEither<TLeft, TRight> Left<TLeft, TRight>(TLeft value)
         {
             return new LeftImpl<TLeft, TRight>(value);
         }
 
-        /// <summary>
-        ///     Create an Either with Right value
-        /// </summary>
         public static IEither<TLeft, TRight> Right<TLeft, TRight>(TRight value)
         {
             return new RightImpl<TLeft, TRight>(value);

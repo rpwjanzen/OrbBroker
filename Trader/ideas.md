@@ -1,2 +1,2 @@
 ﻿* Game end after X turns
-* Travel time
+* Travel time (due to differing distances/reasons)
