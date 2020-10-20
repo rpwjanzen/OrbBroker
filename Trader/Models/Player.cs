@@ -1,4 +1,6 @@
-﻿namespace Trader
+﻿using System;
+
+namespace Trader
 {
     class Player
     {

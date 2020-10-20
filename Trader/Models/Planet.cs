@@ -4,7 +4,7 @@
 namespace Trader
 {
     class Planet {
-        public string Name;
-        public Dictionary<string, Listing> Market;
+        public string Name = "";
+        public Dictionary<string, Listing> Market = new Dictionary<string, Listing>();
     }
 }

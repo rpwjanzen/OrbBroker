@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 
 namespace Trader
 {
     class GameState {
-        public Dictionary<string, SolarSystem> Systems;
-        public Player Player;
+        public Dictionary<string, SolarSystem> Systems = new Dictionary<string, SolarSystem>();
+        public Player Player = new Player();
 
         public Planet CurrentPlanet {
             get
@@ -21,6 +22,11 @@ namespace Trader
                 var location = this.Player.Location;
                 return Systems[location.System];
             }
+        }
+
+        public int DistanceTo(string destination)
+        {
+            return Math.Abs(CurrentSystem.Positions[Player.Location.Planet] - CurrentSystem.Positions[destination]);
         }
     }
 }

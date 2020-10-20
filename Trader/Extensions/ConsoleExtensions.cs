@@ -13,11 +13,11 @@ namespace Trader
             Console.ForegroundColor = currentColor;
         }
 
-        public static void WriteTable<T>(T[] rows, string[] columnNames, Func<T, string[]> getRow)
+        public static void WriteTable<T>(T[] data, string[] columnNames, Func<T, string[]> getRow)
         {
-            var data = rows.Select(r => getRow(r)).ToArray();
+            var rows = data.Select(r => getRow(r)).ToArray();
             var maxLengths = columnNames.Select(x => x.Length).ToList();
-            foreach(var dataRow in data)
+            foreach(var dataRow in rows)
             {
                 var i = 0;
                 foreach(var value in dataRow)
@@ -41,7 +41,7 @@ namespace Trader
             }
             Console.WriteLine();
 
-            foreach (var dataRow in data) {
+            foreach (var dataRow in rows) {
                 for (var i = 0; i < dataRow.Length; i++)
                 {
                     if (i == 0)

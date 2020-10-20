@@ -2,7 +2,7 @@
 {
     class HighScoreEntry
     {
-        public string ShipName;
+        public string ShipName = "";
         public int Score;
         public int Turn;
     }

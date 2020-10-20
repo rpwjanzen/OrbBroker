@@ -221,10 +221,11 @@ namespace Trader
             {
                 Console.WriteLine("-----");
                 Console.WriteLine("Planets");
-                foreach (var entry in gameState.CurrentSystem.Planets.Values)
-                {
-                    Console.WriteLine($" {entry.Name}");
-                }
+                ConsoleExtensions.WriteTable(
+                    gameState.CurrentSystem.Planets.ToArray(),
+                    new string[] { "Planet", "Distance" },
+                    x => new[] { x.Value.Name, gameState.DistanceTo(x.Key).ToString() }
+                );
 
                 return;
             }
@@ -235,11 +236,22 @@ namespace Trader
                 return;
             }
 
-            var fuelCost = 3;
+            var fuelCost = gameState.DistanceTo(destination);
             if (gameState.Player.Fuel < fuelCost)
             {
                 ConsoleExtensions.WithColor($"You do not have enough fuel to travel to {destination}.", System.ConsoleColor.Yellow);
+
+                Console.WriteLine("-----");
+                Console.WriteLine("Planets");
+                ConsoleExtensions.WriteTable(
+                    gameState.CurrentSystem.Planets.ToArray(),
+                    new string[] { "Planet", "Distance" },
+                    x => new [] { x.Value.Name, gameState.DistanceTo(x.Key).ToString() }
+                );
+
+                return;
             }
+
             gameState.Player.Location = new Location
             {
                 System = gameState.Player.Location.System,

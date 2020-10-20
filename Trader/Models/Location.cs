@@ -2,7 +2,7 @@
 {
     class Location
     {
-        public string System;
-        public string Planet;
+        public string System = "";
+        public string Planet = "";
     }
 }

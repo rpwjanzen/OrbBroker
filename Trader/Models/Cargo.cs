@@ -6,6 +6,6 @@ namespace Trader
     class Cargo
     {
         public int Capacity;
-        public Dictionary<string, int> Goods;
+        public Dictionary<string, int> Goods = new Dictionary<string, int>();
     }
 }
